@@ -1,0 +1,32 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="checkout-billing-address">
+    <div class="billing-address-same-as-shipping-block field choice" data-bind="visible: canUseShippingAddress()">
+        <input type="checkbox" name="billing-address-same-as-shipping"
+               data-bind="checked: isAddressSameAsShipping, click: useShippingAddress, attr: {id: 'billing-address-same-as-shipping-' + getCode($parent)}">
+        <label data-bind="attr: {for: 'billing-address-same-as-shipping-' + getCode($parent)}"><span
+                data-bind="i18n: 'My billing and shipping address are the same'"></span></label>
+    </div>
+    <render args="detailsTemplate"></render>
+    <fieldset class="fieldset" data-bind="visible: !isAddressDetailsVisible()">
+        <div class="field field-select-billing">
+            <label class="label"><span data-bind="i18n: 'Billing Address'"></span></label>
+            <div class="control" data-bind="if: (addressOptions.length > 1)">
+                <select class="select" name="billing_address_id" data-bind="
+                options: addressOptions,
+                optionsText: addressOptionsText,
+                value: selectedAddress,
+                event: {change: onAddressChange(selectedAddress())};
+            "></select>
+            </div>
+        </div>        
+        <div data-bind="attr: {id: 'opc-new-billingAddress' + getCode($parent)}, fadeVisible: isAddressFormVisible">
+            <render args="formTemplate"></render>
+        </div>
+        <render args="actionsTemplate"></render>
+    </fieldset>
+</div>
