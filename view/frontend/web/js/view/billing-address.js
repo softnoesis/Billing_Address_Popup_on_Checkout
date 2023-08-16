@@ -90,6 +90,10 @@ function (
             billingAddressPostcodeValidator.initFields(this.get('name') + '.form-fields');
         },
 
+        checkModuleIsEnable: function () {
+            return window.checkoutConfig.moduleStatus;
+        },
+
         /**
          * @returns {Object} Chainable.
          */

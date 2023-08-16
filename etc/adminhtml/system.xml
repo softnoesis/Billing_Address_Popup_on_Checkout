@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Softnoesis
+ * Copyright(C) 10/2020 Softnoesis <ideveloper1990@gmail.com>
+ * @package Softnoesis_Billingaddresspopup
+ * @copyright Copyright(C) 2015 Softnoesis (ideveloper1990@gmail.com)
+ * @author Softnoesis <ideveloper1990@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="softnoesis" translate="label" sortOrder="500" class="ck-tab">
+            <label>Softnoesis</label>
+        </tab>
+        <section id="Billingaddresspopup" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Billing Address Popup</label>
+            <tab>softnoesis</tab>
+            <resource>Softnoesis_Billingaddresspopup::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <attribute type="expanded">1</attribute>
+                <comment>
+                    <![CDATA[
+                    <div id="ck-info">
+                        <a href="https://Softnoesis.com/" target="_blank">
+                        <img class="ck-logo" src="https://www.softnoesis.com/images/logo.png">Softnoesis Technologies</a>© 2020
+                        <a href="https://Softnoesis.com/contact-us/" target="_blank">Contact us</a>
+                        <a href="mailto:info@Softnoesis.com">Mail for Support</a>
+                        <a href="https://marketplace.magento.com/partner/Contactsofdd7c">More Extensions</a>
+                    </div>
+                    <div id="ck-module">
+                        Softnoesis Billing Address Popup Extension -
+                        <span> Version 1.0.2 </span>
+                    </div>
+                    <hr style="border-top: 1px solid #e3e3e3" />
+                ]]>
+                </comment>
+                <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
